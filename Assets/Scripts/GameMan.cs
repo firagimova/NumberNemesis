@@ -36,7 +36,7 @@ public class GameMan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (score == 5)
+        if (score == 31)
         {
             glitch.SetActive(true);
             Invoke("NextScene", 2f);
@@ -72,6 +72,11 @@ public class GameMan : MonoBehaviour
         answerText2.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
         answerText3.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
         answerText4.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
+
+        answerText1.interactable = true;
+        answerText2.interactable = true;
+        answerText3.interactable = true;
+        answerText4.interactable = true;
 
         question.text = game.MakeEquation();
         GenerateAnswers();
@@ -132,6 +137,12 @@ public class GameMan : MonoBehaviour
             answerText1.GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
         }
 
+        //make other buttons unclickable
+        answerText1.interactable = false;
+        answerText2.interactable = false;
+        answerText3.interactable = false;
+        answerText4.interactable = false;
+
         // next question after 1 second
         Invoke("NextQuestion", 2f);
         
@@ -146,6 +157,11 @@ public class GameMan : MonoBehaviour
         {
             answerText2.GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
         }
+
+        answerText1.interactable = false;
+        answerText2.interactable = false;
+        answerText3.interactable = false;
+        answerText4.interactable = false;
 
         // next question after 1 second
         Invoke("NextQuestion", 2f);
@@ -163,6 +179,11 @@ public class GameMan : MonoBehaviour
             answerText3.GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
         }
 
+        answerText1.interactable = false;
+        answerText2.interactable = false;
+        answerText3.interactable = false;
+        answerText4.interactable = false;
+
         // next question after 1 second
         Invoke("NextQuestion", 2f);
 
@@ -178,6 +199,11 @@ public class GameMan : MonoBehaviour
         {
             answerText4.GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
         }
+
+        answerText2.interactable = false;
+        answerText3.interactable = false;
+        answerText4.interactable = false;
+        answerText1.interactable = false;
 
         // next question after 1 second
         Invoke("NextQuestion", 2f);
